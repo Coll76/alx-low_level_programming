@@ -1,7 +1,7 @@
 #include<stdio.h>
 /**
- * main -program to use put s function
- * return:0(success)
+ * main - hello c
+ * return: 0 (success)
  */
 int main(void)
 {
