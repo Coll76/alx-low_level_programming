@@ -11,8 +11,9 @@ int main(void)
 
 	while (lowerCase <= 'z')
 	{
-	if (lowerCase  == 'q' || lowerCase == 'e')
+	if (lowerCase	== 'q' || lowerCase == 'e')
 	{
+	lowerCase++;
 	continue;
 	}
 	putchar(lowerCase);
