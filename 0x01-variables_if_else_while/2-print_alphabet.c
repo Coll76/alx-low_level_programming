@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<ctype.h>
 /**
  *main - Entry point
  *description - 'Print alphabets in lowercase
@@ -6,12 +7,12 @@
  */
 int main(void)
 {
-	int n = 97;
+	int lowerCase = 'a';
 
-	while (n <= 122)
+	while (lowerCase<='z')
 	{
-	 putchar (n);
-	 n++;
+	 putchar (lowerCase);
+	 lowerCase++;
 	}
 	putchar ('\n');
 	return (0);
