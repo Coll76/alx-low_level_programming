@@ -2,18 +2,18 @@
 #include<ctype.h>
 /**
  *main - Entry point
- *description - 'Print alphabets in lowercase
- *Return: always 0
+ *description - 'Print alphabets in lowercase'
+ *Return: Always 0
  */
 int main(void)
 {
-	int lowerCase = 'a';
+	int lowercase = 'a';
 
-	while (lowerCase <= 'z')
+	while (lowercase <= 'z')
 	{
-	 putchar (lowerCase);
-	 lowerCase++;
+		putchar(lowercase);
+		lowercase++;
 	}
-	putchar ('\n');
+	putchar('\n');
 	return (0);
 }
