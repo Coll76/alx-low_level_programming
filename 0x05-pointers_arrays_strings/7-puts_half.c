@@ -5,14 +5,19 @@
  */
 void puts_half(char *str)
 {
-	int strlen(char *s)
-	{
-	int longi = 0;
+	int len = 0;
 
-	while (*s != '\0')
+	while (*str != '\0')
 	{
-	longi++;
-	s++;
+	len++;
+	str++;
 	}
-	return (longi);
+	str -= (len / 2);
+
+	while (*str != '\0')
+	{
+	_putchar(*str);
+	str++;
+	}
+	_putchar('\n');
 }
