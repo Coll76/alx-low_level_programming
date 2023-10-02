@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-	/**
-	*main - program that adds positive numbers
-	*@argc: argument count
-	*@argv: argument vector
-	*@Return: 0
-	*/
+/**
+ * main - programm that adds positive nummbers
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0
+ */
 	int main(int argc, char *argv[])
 	{
 	int sum = 0;
