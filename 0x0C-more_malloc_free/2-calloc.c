@@ -7,21 +7,13 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	if (nmemb == 0 || size == 0)
-	{
-		return (NULL);
-	}
-	else
-	{
-		char *ptr = (char *)malloc(size);
+	char *output;
 
-		if (ptr == NULL)
-		{
-			return (NULL);
-		}
-		else
-		{
-		return (ptr);
-		}
-	}
+	if (nmemb == 0 || size == 0)
+	return (NULL);
+	output = calloc(nmemb, size);
+	if (output == NULL)
+	return (NULL);
+	else
+	return (output);
 }
