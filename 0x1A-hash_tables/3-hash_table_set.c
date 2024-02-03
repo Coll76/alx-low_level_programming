@@ -25,17 +25,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = hash_djb2((const unsigned char *)key);
 	current = ht->array[index];
 
-	if (current == NULL)
+	while (current != NULL)
 	{
-		return (0);
-	}
-	if (strcmp(key, current->key) == 0)
-	{
+		if (strcmp(key, current->key) == 0)
+		{
 		free(current->value);
 		current->value = strdup(value);
 		return (1);
-	}
+		}
 	current = current->next;
+	}
 
 	ne_node = (hash_node_t *)malloc(sizeof(hash_node_t));
 
