@@ -3,12 +3,12 @@
  * hash_table_get - retrieves a value associated with a key
  * @ht: hash table you want to look into
  * @key: key you are looking for
- * Return: value associated with the element, or NULL if key couldn’t be found
+ * Return: value associated with the element, or NULL
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *current;
-	unsigned long int index = hash_djb2((const unsigned char *)key);
+	unsigned long int index = hash_djb2((const unsigned char *)key) % ht->size;
 
 	if (ht == NULL || key == NULL || *key == '\0')
 	{
