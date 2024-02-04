@@ -14,6 +14,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		return (NULL);
 	}
+	if (index >= ht->size)
+	{
+		return (NULL);
+	}
 	current = ht->array[index];
 
 	while (current)
