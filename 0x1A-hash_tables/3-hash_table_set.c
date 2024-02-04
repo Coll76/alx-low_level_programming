@@ -18,11 +18,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *current;
 
-	if (ht == NULL || key == NULL || value == NULL)
+	if (ht == NULL || key == NULL || value == NULL || *key == '\0')
 	{
 		return (0);
 	}
-	index = hash_djb2((const unsigned char *)key);
+	index = key_index((const unsigned char *)key, ht->size);
 	current = ht->array[index];
 
 	while (current != NULL)
