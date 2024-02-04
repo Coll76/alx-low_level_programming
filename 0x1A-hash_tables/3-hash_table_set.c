@@ -31,23 +31,35 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 		free(current->value);
 		current->value = strdup(value);
+		if (current->value == NULL)
+		{
+			return (0);
+		}
 		return (1);
 		}
 	current = current->next;
 	}
 
-	ne_node = (hash_node_t *)malloc(sizeof(hash_node_t));
+	ne_node = malloc(sizeof(hash_node_t));
 
 	if (ne_node == NULL)
 	{
 		return (0);
 	}
-	else
-	{
 	ne_node->key = strdup(key);
+	if (ne_node->key == NULL)
+	{
+		free(ne_node->key);
+		return (0);
+	}
 	ne_node->value = strdup(value);
+	if (ne_node->value == NULL)
+	{
+		free(ne_node->key);
+		free(ne_node->value);
+		return (0);
+	}
 	ne_node->next = ht->array[index];
 	ht->array[index] = ne_node;
-	}
 	return (1);
 }
