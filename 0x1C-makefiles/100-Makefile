@@ -6,14 +6,8 @@ CC = gcc
 # Source files
 SRC = main.c utils.c
 
-# Object files
-OBJ = $(SRC:.c=.o)
-
 # Executable name
 NAME = school
-
-# Program to delete files
-RM = /bin/rm -f
 
 # Compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
@@ -27,11 +21,11 @@ $(NAME): $(OBJ)
 
 # Rule to clean Emacs, Vim temporary files, and executable
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) *~ $(NAME) *.o
 
 # Rule to clean object files
 oclean:
-	$(RM) $(OBJ)
+	$(RM) *.o
 
 # Rule to clean Emacs, Vim temporary files, executable, and object files
 fclean: clean oclean
