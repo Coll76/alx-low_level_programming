@@ -10,13 +10,14 @@ int create_file(const char *filename, char *text_content)
 {
 	int file;
 	int n;
+	size_t w;
 
-	if (filename == NULL)
+	if (filename == NULL || text_content == NULL)
 	{
 		return (-1);
 	}
 	/*Give write permissions, create file if not there, truncate if it exists*/
-	file = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	file = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 
 	if (file == -1)
 	{
@@ -25,7 +26,13 @@ int create_file(const char *filename, char *text_content)
 	}
 	n = strlen(text_content);
 	/*write to the file*/
-	write(file, text_content, n);
+	w = write(file, text_content, n);
+
+	if (w != strlen(text_content))
+	{
+		close(file);
+		return (-1);
+	}
 	close(file);
 
 	return (1);
